@@ -23,9 +23,16 @@
     }).addTo(map);
 
     fetch('data_red_simplified.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error('GeoJSON not found or failed to load');
+        return response.json();
+      })
       .then(data => {
         L.geoJSON(data).addTo(map);
+      })
+      .catch(err => {
+        console.error('Error loading GeoJSON:', err);
+        alert('Could not load squirrels.geojson');
       });
   </script>
 </body>
