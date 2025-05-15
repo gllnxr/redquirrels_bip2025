@@ -22,7 +22,7 @@
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    fetch('squirrels.geojson')
+    fetch('data_red_simplified.json')
       .then(response => response.json())
       .then(data => {
         L.geoJSON(data).addTo(map);
