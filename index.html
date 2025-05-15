@@ -28,7 +28,16 @@
         return response.json();
       })
       .then(data => {
-        L.geoJSON(data).addTo(map);
+         L.geoJSON(data, {
+        style: function (feature) {
+          return {
+            color: '#333333',      // Randfarbe
+            weight: 2,             // Randstärke
+            fillColor: '#e74c3c',  // Füllfarbe (z. B. rot)
+            fillOpacity: 0.6       // Transparenz
+          };
+        }
+      }).addTo(map);
       })
       .catch(err => {
         console.error('Error loading GeoJSON:', err);
