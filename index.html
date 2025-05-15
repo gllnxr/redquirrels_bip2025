@@ -36,7 +36,12 @@
             fillColor: '#e74c3c',  // Füllfarbe (z. B. rot)
             fillOpacity: 0.6       // Transparenz
           };
-        }
+        },
+  onEachFeature: function (feature, layer) {
+    layer.bindTooltip("Sciurus vulgaris in Eurasia", {
+      sticky: true
+    });
+  }
       }).addTo(map);
       })
       .catch(err => {
