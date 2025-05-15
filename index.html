@@ -21,6 +21,11 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
+    L.control.attribution({
+    position: 'bottomright'
+  }).addTo(map).addAttribution(
+    'Data: <a href="https://www.iucnredlist.org/species/221730864/221731049" target="_blank" rel="noopener">Example Source</a>'
+  );
 
     fetch('data_red_simplified.json')
       .then(response => {
