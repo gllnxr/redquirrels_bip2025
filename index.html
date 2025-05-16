@@ -23,11 +23,9 @@
   subdomains: 'abcd',
   maxZoom: 19
     }).addTo(map);
-    L.control.attribution({
-    position: 'bottomright'
-  }).addTo(map).addAttribution(
-    'Data: <a href="https://www.iucnredlist.org/species/221730864/221731049" target="_blank" rel="noopener">Data Source (IUCN)</a>'
-  );
+    map.attributionControl.addAttribution(
+  'Data: <a href="https://www.iucnredlist.org/species/20025/115155242" target="_blank" rel="noopener">IUCN</a>'
+);
 
     fetch('data_red_simplified.json')
       .then(response => {
